@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/streadway/amqp"
+	"github.com/rabbitmq/amqp091-go"
 )
 
 func main() {
 	// 1. 连接mq
-	conn, err := amqp.Dial("amqp://admin:password@localhost:5672/")
+	conn, err := amqp091.Dial("amqp://admin:password@localhost:5672/")
 	if err != nil {
 		log.Fatalf("连接mq失败：%v", err)
 	}

@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/streadway/amqp"
+	"github.com/rabbitmq/amqp091-go"
 )
 
 func main() {
 	// 1. 连接RabbitMQ
-	conn, err := amqp.Dial("amqp://admin:password@localhost:5672/")
+	conn, err := amqp091.Dial("amqp://admin:password@localhost:5672/")
 	if err != nil {
 		log.Fatalf("连接mq失败：%v", err)
 	}
@@ -42,7 +42,7 @@ func main() {
 		q.Name,
 		false,
 		false,
-		amqp.Publishing{
+		amqp091.Publishing{
 			Body: []byte(body),
 		})
 	if err != nil {
