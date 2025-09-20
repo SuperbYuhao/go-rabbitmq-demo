@@ -52,7 +52,7 @@ func main() {
 	fmt.Println("等待接收消息...")
 	for msg := range msgs {
 		fmt.Printf("收到消息：%s\n", msg.Body)
-		fmt.Println("回复消息")
+		fmt.Println("等待接收消息...")
 		msg.Ack(false)
 	}
 }
