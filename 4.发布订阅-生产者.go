@@ -15,7 +15,7 @@ func main() {
 	exChangeName := "pub-sub"
 	// 1. 声明 fanout 类型交换器
 	err := ch.ExchangeDeclare(
-		"exChangeName",
+		exChangeName,
 		"fanout",
 		true,
 		false,
