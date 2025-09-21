@@ -50,7 +50,7 @@ func main() {
 		body := fmt.Sprintf("msg-%d", i)
 		err = ch.Publish(
 			exChangeName, //  交换器名称
-			"node001",    // 改这里
+			"node002",
 			false,
 			false,
 			amqp091.Publishing{
